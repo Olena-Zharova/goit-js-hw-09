@@ -79,7 +79,6 @@ function productTemplate(images) {
     <img
       class="gallery-image"
         src="${images.preview}"
-      data-source="${images.original}"
       alt="${images.description}"
     />
   </a>
@@ -97,3 +96,7 @@ const markup = productsTemplate(images);
 
 container.innerHTML = markup;
 
+let gallery = new SimpleLightbox('.gallery a', {
+    captionDelay: 250,
+    captionsData: 'alt',
+});
