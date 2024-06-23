@@ -6,7 +6,7 @@ const formData = {
 };
 
 const formElem = document.querySelector('.feedback-form');
-
+const submit = document.querySelector('btn-submit');
 
 formElem.addEventListener('input', (e) => {
     formData.email = formElem.elements.email.value.trim();
@@ -36,9 +36,10 @@ formElem.addEventListener('submit', (e) => {
     else {
         console.log(formData);
     }
-});
 
-formElem.reset();
+    formElem.reset();
 formData.email = '';
 formData.message = '';
 localStorage.removeItem('feedback-form-state');
+});
+
